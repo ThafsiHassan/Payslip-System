@@ -38,6 +38,8 @@ Payslip-System/
 ├── .gitignore
 │
 ├── static/
+│   ├── style.css
+│   └── images/
 │
 └── templates/
     ├── index.html
