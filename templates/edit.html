@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+
+
+
+
+  <form method="post" action="{{url_for('edit',E_id=datas.E_ID)}}">
+        <div id="edit">
+
+        <label>Employee Name</label>
+        <input type="text" name="employee_name" required value="{{datas.Ename}}"><br>
+        <label>Employee ID</label>
+        <input type="number" name="employee_ID" required value="{{datas.E_ID}}"><br>
+        <label>Designation</label>
+        <input type="text" name="designation" required value="{{datas.Desg}}"><br>
+        <label>Joining Date</label>
+        <input type="date" name="joining_date" required value="{{datas.Jdate}}"><br>
+        <label>Basic Salary</label>
+        <input type="number" name="basic_salary" required value="{{datas.B_salary}}">
+        <input type="submit" value="submit" onclick='alert("Details Updated Successfully??")'>
+        </div>
+    </form>  
+</body>
+</html>

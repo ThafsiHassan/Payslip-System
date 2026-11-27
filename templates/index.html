@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo">
+                <h1>👥</h1>
+                <h2>Employee Management</h2>
+            </div>
+            <div class="section">
+                <a href="{{ url_for('index') }}" class="{% if request.endpoint == 'index' %} active{% endif %}">Home</a>
+                 <a href="{{ url_for('employee') }}" class="{% if request.endpoint == 'employee' %} active{% endif %}">Employees</a>
+                 <a href="{{ url_for('salary') }}" class="{% if request.endpoint == 'salary' %} active{% endif %}">Salary</a>
+                <a href="{{ url_for('payslip') }}" class="{% if request.endpoint == 'payslip' %} active{% endif %}">Payslip</a>
+            </div>
+        </nav>
+    </header>
+
+
+    {% block content %}
+
+<div class="welcome">
+    <h1>Welcome to Employee Management System</h1>
+    <p>Manage your employees, salary details and payslips easily.</p>
+</div>
+
+<div class="main-container">
+
+    <div class="image">
+        <img src="{{ url_for('static', filename='images/payroll.jpg') }}"
+             alt="Payroll illustration">
+        <h2>Manage Your Workforce</h2>
+        <p>Keep employee information organised and accessible.</p>
+    </div>
+
+    <div class="form-container">
+
+        <h2>Employee Registration</h2>
+        <p class="subtitle">Enter employee details below</p>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <script>
+                    alert("{{ message }}");
+                </script>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form method="post" action="{{ url_for('index') }}">
+
+            <div class="input-group">
+                <label>Employee Name</label>
+                <input type="text" name="employee_name" placeholder="Enter employee name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Employee ID</label>
+                <input type="number" name="employee_ID" placeholder="Enter employee ID" required>
+            </div>
+
+            <div class="input-group">
+                <label>Designation</label>
+                <input type="text" name="designation" placeholder="Enter designation" required>
+            </div>
+
+            <div class="input-group">
+                <label>Joining Date</label>
+                <input type="date" name="joining_date" required>
+            </div>
+
+            <div class="input-group">
+                <label>Basic Salary</label>
+                <input type="number" name="basic_salary" placeholder="Enter basic salary" required>
+            </div>
+
+            <button type="submit" class="btn">Register Employee →</button>
+
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+    {% block content %}
+
+    <div class="payslip_form">
+    <h2>Generate Payslip</h2>
+    
+    <form method="POST">
+        <div class="payslip_fields">
+            <div class="payslip_field">
+        <label>Employee ID</label>
+        <select name="E_ID" required>
+            <option value="">Select Employee</option>
+            {% for row in data %}
+            <option value="{{ row[0] }}">{{ row[0] }}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <br><br>
+
+        <div class="payslip_field">
+        <label>Select Month</label>
+        <input type="month" name="Salary_Month" required>
+        <br><br>
+        </div>
+        </div>
+        <input class="button"" type="submit" value="Generate Payslip">
+       
+    </form>
+    </div>
+    
+
+     
+
+    {% if payslip_details %}
+
+    
+    <div  class="payslip">
+
+    <h3>PAYSLIP</h3>
+    <table border="1" cellpadding="10">
+         <thead>
+        <th colspan="3">Employee ID<br>
+        {{ payslip_details[0] }}</th> 
+         
+        
+        <th colspan="3">Employee Name <br>
+        {{ payslip_details[1] }} 
+        
+        
+        <th colspan="3">Designation<br> 
+        {{ payslip_details[2] }}</th>
+        </thead>
+        
+        
+        <thead>
+            <!-- <th>Employee ID</th>
+            <th>Salary Month</th> -->
+            <th>Basic Salary</th>
+            <th>HRA</th>
+            <th>DA</th>
+            <th>Allowance</th>
+            <th>Gross</th>
+            <th>PF</th>
+            <th>ESI</th>
+            <th>Net Salarys</th>
+            <th>Leave Days</th>
+        </thead>
+        <tbody>
+            
+            <td>{{ payslip_details[4] }}</td>
+            <td>{{ payslip_details[5] }}</td>
+            <td>{{ payslip_details[6] }}</td>
+            <td>{{ payslip_details[7] }}</td>
+            <td>{{ payslip_details[8] }}</td>
+            <td>{{ payslip_details[9] }}</td>
+            <td>{{ payslip_details[10] }}</td>
+            <td>{{ payslip_details[11] }}</td>
+            <td>{{ payslip_details[12] }}</td>
+        </tbody>
+    </table>
+
+   
+
+        <button
+        type="button"
+        class="print-btn"
+        onclick="window.print()">
+
+        Print Payslip
+
+    </button>
+     </div>
+
+    {% elif searched %}
+
+        <p class="no-payslip">
+            No payslip found for this employee and month.
+        </p>
+
+    {% endif %}
+
+
+
+{% endblock %}
+

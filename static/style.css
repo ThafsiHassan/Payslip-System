@@ -1,0 +1,489 @@
+
+/* GENERAL STYLING */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f4f7fc;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVBAR - ORIGINAL DESIGN PRESERVED */
+.nav {
+    background-color: rgb(142, 174, 204);
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    position: relative;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    margin-left: 50px;
+    padding: 10px;
+    color: aliceblue;
+}
+
+.logo h1 {
+    background-color: transparent;
+    margin-top: -1px;
+    font-size: 70px;
+    position: absolute;
+    top: -20px;
+    left: 10px;
+}
+
+.logo h2 {
+    position: absolute;
+    top: 5px;
+    left: 100px;
+}
+
+header .section {
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    gap: 40px;
+    align-items: center;
+}
+
+.section a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 20px;
+    background-color: rgb(112, 165, 218);
+    padding: 10px;
+    border-radius: 5px;
+    width: 120px;
+}
+
+/* WELCOME SECTION */
+.welcome {
+    text-align: center;
+    padding: 40px 20px 25px;
+}
+
+.welcome h1 {
+    color: #172554;
+    font-size: 30px;
+    margin: 0;
+}
+
+.welcome p {
+    color: #64748b;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 20px auto 50px;
+    padding: 20px;
+}
+
+/* IMAGE SECTION */
+.image {
+    flex: 1;
+    text-align: center;
+}
+
+.image img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+}
+
+.image h2 {
+    color: #172554;
+    margin-top: 15px;
+    font-size: 23px;
+}
+
+.image p {
+    color: #64748b;
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+/* FORM CARD */
+.form-container {
+    flex: 1;
+    max-width: 480px;
+    width: 100%;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+}
+
+.form-container h2 {
+    color: #172554;
+    font-size: 23px;
+    margin-top: 0;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin: 8px 0 25px;
+    font-size: 14px;
+}
+
+/* INPUT FIELDS */
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.input-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #dbe3ef;
+    border-radius: 8px;
+    background: #f8fafc;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* SUBMIT BUTTON */
+.form-container .btn {
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.form-container .btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* Print design */
+
+@page {
+    size: A4 portrait;
+    margin: 12mm;
+}
+
+@media print {
+
+    
+    body * {
+        visibility: hidden !important;
+    }
+
+    
+    .payslip,
+    .payslip * {
+        visibility: visible !important;
+    }
+
+    
+    .payslip {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 10px !important;
+        background: white !important;
+        border: none !important;
+        box-shadow: none !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+    }
+
+    
+    .print-btn {
+        display: none !important;
+    }
+
+   
+    .payslip-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    .payslip-table th,
+    .payslip-table td {
+        border: 1px solid black !important;
+        padding: 6px !important;
+        text-align: center !important;
+        font-size: 10px !important;
+        color: black !important;
+    }
+
+}
+
+/* EMPLOYEE */
+
+.employee-table {
+   
+    margin: 50px auto;
+    display: grid;
+    border: 1px solid transparent;
+    width: 100%;
+}
+
+.employee-table h1 {
+    
+   
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+}
+.employee-table span{
+    font-size: 50px;
+
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+.heading .add{
+    color: aliceblue;
+    background-color:rgba(25, 25, 215, 0.955);
+    width: 200px;
+    height: 55px;
+    border-radius: 5%;
+    padding: 15px;
+    text-align: center;
+    font-size: larger;
+    margin-top: 20px;
+}
+.employee-table a {
+    color:white;
+    text-decoration: none;
+    
+}
+.employee-table .edit{
+    background-color: rgb(41, 101, 154);
+    padding: 8px;
+    width: 70px;
+    border-radius: 10%;
+
+}
+.employee-table .delete{
+    background-color:rgb(198, 25, 25);
+    padding: 8px;
+    width: 70px;
+    border-radius: 10%;
+
+} 
+.employee-table table {
+    margin-top: 50px;
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    
+    
+}
+.employee-table th,
+.employee-table td {
+    border: 1px solid rgb(242, 232, 232);
+    padding: 10px;
+    border-collapse: collapse;
+}
+.employee-table th{
+    background-color:rgb(211, 222, 232);
+     padding: 15px;
+    
+}
+
+/* SALARY */
+
+.salary {
+    width: 80%;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #f5f8fc;
+    border-radius: 10px;
+}
+.salary h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.select {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+.field label {
+    font-weight: bold;
+}
+table .salary{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.field input,
+.field select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.salary input[type="submit"] {
+    
+    padding: 10px 20px;
+    background-color: #29659a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* PAYSLIP */
+
+
+.payslip_form {
+    width: 80%;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #f5f8fc;
+    border-radius: 10px;
+}
+
+.payslip_form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.payslip_fields {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.payslip_field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.payslip_field label {
+    font-weight: bold;
+}
+
+.payslip_field select,
+.payslip_field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.payslip_form .button {
+    /* margin-top: 5px; */
+    display: block;
+    padding: 10px;
+    background-color: #29659a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ .print-btn{
+    background-color:black;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10%;
+}
+.payslip{
+    
+    width: 70%;
+    margin: 30px auto;
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f5f8fc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.no-payslip {
+    width: 80%;
+    margin: 25px auto;
+    padding: 15px;
+    text-align: center;
+    color: #c62828;
+    background-color: #fdeaea;
+    border: 1px solid #e5a1a1;
+    border-radius: 8px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+
+/* EDIT */
+
+#edit{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 25px;
+    margin: 30px auto;
+    background-color: #eaf2f8;
+    border-radius: 10px;
+}
+
+#edit input {
+    padding: 10px;
+    margin-bottom: 12px;
+}
+
+
+/* Highlighting selected nav */
+
+.nav a.active{
+    background-color: blue;
+    color: #eaf2f8;
+    padding: 10px;
+    border-radius: 5%;
+}
